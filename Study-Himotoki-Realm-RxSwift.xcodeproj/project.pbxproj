@@ -12,6 +12,8 @@
 		19B6618020DD0EDB000D0F41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19B6617E20DD0EDB000D0F41 /* Main.storyboard */; };
 		19B6618220DD0EDF000D0F41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19B6618120DD0EDF000D0F41 /* Assets.xcassets */; };
 		19B6618520DD0EDF000D0F41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19B6618320DD0EDF000D0F41 /* LaunchScreen.storyboard */; };
+		19B6618D20DD10B8000D0F41 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B6618C20DD10B8000D0F41 /* TableViewController.swift */; };
+		ACF133D3E6D303FACA3199C1 /* Pods_Study_Himotoki_Realm_RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BCB7265521F733B2F1FA779 /* Pods_Study_Himotoki_Realm_RxSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,10 @@
 		19B6618120DD0EDF000D0F41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		19B6618420DD0EDF000D0F41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		19B6618620DD0EDF000D0F41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19B6618C20DD10B8000D0F41 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		4BCB7265521F733B2F1FA779 /* Pods_Study_Himotoki_Realm_RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Study_Himotoki_Realm_RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		838F99CCCB753AAF0A3DFDC2 /* Pods-Study-Himotoki-Realm-RxSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Study-Himotoki-Realm-RxSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Study-Himotoki-Realm-RxSwift/Pods-Study-Himotoki-Realm-RxSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		F37ED2118B4760F9A62CAE83 /* Pods-Study-Himotoki-Realm-RxSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Study-Himotoki-Realm-RxSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-Study-Himotoki-Realm-RxSwift/Pods-Study-Himotoki-Realm-RxSwift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACF133D3E6D303FACA3199C1 /* Pods_Study_Himotoki_Realm_RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A1CC382599CE8A97E9AF49F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				838F99CCCB753AAF0A3DFDC2 /* Pods-Study-Himotoki-Realm-RxSwift.debug.xcconfig */,
+				F37ED2118B4760F9A62CAE83 /* Pods-Study-Himotoki-Realm-RxSwift.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		19B6616E20DD0EDB000D0F41 = {
 			isa = PBXGroup;
 			children = (
 				19B6617920DD0EDB000D0F41 /* Study-Himotoki-Realm-RxSwift */,
 				19B6617820DD0EDB000D0F41 /* Products */,
+				0A1CC382599CE8A97E9AF49F /* Pods */,
+				4617CEFF7A97470947CAD387 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,12 +74,21 @@
 			children = (
 				19B6617A20DD0EDB000D0F41 /* AppDelegate.swift */,
 				19B6617C20DD0EDB000D0F41 /* ViewController.swift */,
+				19B6618C20DD10B8000D0F41 /* TableViewController.swift */,
 				19B6617E20DD0EDB000D0F41 /* Main.storyboard */,
 				19B6618120DD0EDF000D0F41 /* Assets.xcassets */,
 				19B6618320DD0EDF000D0F41 /* LaunchScreen.storyboard */,
 				19B6618620DD0EDF000D0F41 /* Info.plist */,
 			);
 			path = "Study-Himotoki-Realm-RxSwift";
+			sourceTree = "<group>";
+		};
+		4617CEFF7A97470947CAD387 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4BCB7265521F733B2F1FA779 /* Pods_Study_Himotoki_Realm_RxSwift.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 19B6618920DD0EDF000D0F41 /* Build configuration list for PBXNativeTarget "Study-Himotoki-Realm-RxSwift" */;
 			buildPhases = (
+				094E648123522DB6393148F0 /* [CP] Check Pods Manifest.lock */,
 				19B6617320DD0EDB000D0F41 /* Sources */,
 				19B6617420DD0EDB000D0F41 /* Frameworks */,
 				19B6617520DD0EDB000D0F41 /* Resources */,
+				EE5BA8BBCD1F880FC0DF577B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,12 +159,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		094E648123522DB6393148F0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Study-Himotoki-Realm-RxSwift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE5BA8BBCD1F880FC0DF577B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Study-Himotoki-Realm-RxSwift/Pods-Study-Himotoki-Realm-RxSwift-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Himotoki/Himotoki.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Himotoki.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Study-Himotoki-Realm-RxSwift/Pods-Study-Himotoki-Realm-RxSwift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		19B6617320DD0EDB000D0F41 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				19B6617D20DD0EDB000D0F41 /* ViewController.swift in Sources */,
+				19B6618D20DD10B8000D0F41 /* TableViewController.swift in Sources */,
 				19B6617B20DD0EDB000D0F41 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,6 +357,7 @@
 		};
 		19B6618A20DD0EDF000D0F41 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 838F99CCCB753AAF0A3DFDC2 /* Pods-Study-Himotoki-Realm-RxSwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -296,6 +376,7 @@
 		};
 		19B6618B20DD0EDF000D0F41 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F37ED2118B4760F9A62CAE83 /* Pods-Study-Himotoki-Realm-RxSwift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

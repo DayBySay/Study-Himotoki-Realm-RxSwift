@@ -8,43 +8,37 @@
 
 import UIKit
 import RealmSwift
+import Himotoki
+import Alamofire
 
 class TableViewController: UITableViewController {
-
+    @IBAction func add(_ sender: Any) {
+        APIRequest.request { (users) in
+            
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
-        let user = User()
-        user.name = "ore"
-        user.age = 29
-        
-        let realm = try! Realm()
-        
-        try! realm.write {
-            realm.add(user)
-        }
-        
-        DispatchQueue(label: "background").async {
-            autoreleasepool {
-                let realm = try! Realm()
-                let users = realm.objects(User.self)
-                print(users)
-            }
-        }
-
+//        let user = User()
+//        user.name = "ore"
+//        user.age = 29
+//
+//        let realm = try! Realm()
+//
+//        try! realm.write {
+//            realm.add(user)
+//        }
+//
+//        DispatchQueue(label: "background").async {
+//            autoreleasepool {
+//                let realm = try! Realm()
+//                let users = realm.objects(User.self)
+//                print(users)
+//            }
+//        }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -57,64 +51,40 @@ class TableViewController: UITableViewController {
         return 0
     }
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
-class User: Object {
+final class User: Object, Himotoki.Decodable {
     @objc dynamic var name = ""
     @objc dynamic var age = 0
+    
+    static func decode(_ e: Extractor) throws -> User {
+        let user = User()
+        user.name = try! e <| "name"
+        user.age = try! e <| "age"
+        return user
+    }
+}
+
+final class Users: Himotoki.Decodable {
+    var users = [User]()
+
+    static func decode(_ e: Extractor) throws -> Users {
+        let users = Users()
+        users.users = try e <|| "users"
+        return users
+    }
+}
+
+struct APIRequest {
+    static func request(completion: @escaping (Users) -> Void) {
+        Alamofire.request(URL(string: "http://localhost:8080")!).responseJSON { (response) in
+            switch response.result {
+            case .success(let value):
+                let users = try! Users.decodeValue(value)
+                completion(users)
+            case .failure(let error):
+                print("error \(error.localizedDescription)")
+            }
+        }
+    }
 }

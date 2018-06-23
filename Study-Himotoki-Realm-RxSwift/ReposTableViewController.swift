@@ -33,15 +33,17 @@ class ReposTableViewController: UITableViewController {
         reposViewModel.fetchData()
     }
     
-    @IBAction func didTouchUpItemButton(_ sender: Any) {
-        reposViewModel.fetchData()
-    }
-    
     func setupTableView() {
         tableView.delegate = nil
         tableView.dataSource = nil
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
         tableView.register(UINib(nibName: "RepoTableViewCell", bundle: nil), forCellReuseIdentifier: "RepoTableViewCell")
+        
+        tableView.rx.itemSelected
+            .subscribe(onNext: { [unowned self] indexPath in
+                let cell = self.tableView.cellForRow(at: indexPath) as? RepoTableViewCell
+                cell?.openRepository(target: self)
+            }).addDisposableTo(disposeBag)
     }
     
     func setupBinding() {

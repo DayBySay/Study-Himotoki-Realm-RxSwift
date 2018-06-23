@@ -1,6 +1,15 @@
 PODS:
   - Alamofire (4.7.2)
+  - FLAnimatedImage (1.0.12)
   - Himotoki (3.2.0)
+  - PINCache (2.3)
+  - PINRemoteImage (2.1.4):
+    - PINRemoteImage/FLAnimatedImage (= 2.1.4)
+  - PINRemoteImage/Core (2.1.4):
+    - PINCache (>= 2.1)
+  - PINRemoteImage/FLAnimatedImage (2.1.4):
+    - FLAnimatedImage (>= 1.0)
+    - PINRemoteImage/Core
   - Realm (3.6.0):
     - Realm/Headers (= 3.6.0)
   - Realm/Headers (3.6.0)
@@ -13,6 +22,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - Himotoki
+  - PINRemoteImage
   - RealmSwift
   - RxCocoa
   - RxSwift
@@ -20,7 +30,10 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - FLAnimatedImage
     - Himotoki
+    - PINCache
+    - PINRemoteImage
     - Realm
     - RealmSwift
     - RxCocoa
@@ -28,12 +41,15 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   Himotoki: 2618fc6b939ad6d9b71c52c90fe210f54ea28167
+  PINCache: ce36ed282031b92fc7733ffe831f474ff80fddc2
+  PINRemoteImage: 4ac4011c5caefd6befd99758e09becede05d3226
   Realm: 08b464b462d4f31bbd4ba5f5a1c8722ef0a700b7
   RealmSwift: 973e1499c44ab571f894c2c908e2db450be280c3
   RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
   RxSwift: e49536837d9901277638493ea537394d4b55f570
 
-PODFILE CHECKSUM: 41eeb7b2f7a03583f686c8abaa644205d6265a98
+PODFILE CHECKSUM: 750b7cd2b5677d9e8e7d4c76fde8e5a0d1f232a4
 
 COCOAPODS: 1.5.3

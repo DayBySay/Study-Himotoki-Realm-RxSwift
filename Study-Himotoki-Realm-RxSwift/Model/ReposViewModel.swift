@@ -1,19 +1,22 @@
 //
-//  FeedTableViewController.swift
+//  ReposViewModel.swift
 //  Study-Himotoki-Realm-RxSwift
 //
 //  Created by Takayuki Sei on 2018/06/23.
 //  Copyright © 2018年 Takayuki Sei. All rights reserved.
 //
 
-import UIKit
-import Alamofire
-import Himotoki
+import Foundation
+import RxSwift
+import RxCocoa
 
-class FeedTableViewController: UITableViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+class ReposViewModel {
+    private let repos = BehaviorRelay(value: [Repo]())
+    var driver: Driver<[Repo]> {
+        return repos.asDriver()
+    }
+    
+    func fetchData() {
         let request = URLAPIRequest()
         let apiClient = AlamofireClient()
         let url = URL(string: "https://api.github.com/users/daybysay/repos")!
@@ -30,21 +33,7 @@ class FeedTableViewController: UITableViewController {
                 return
             }
             
-            for repo in repos {
-                print(repo.fullName)
-            }
+            self.repos.accept(repos)
         }
-    }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
     }
 }

@@ -10,4 +10,5 @@ target 'Study-Himotoki-Realm-RxSwift' do
  pod 'RxSwift'
  pod 'RxCocoa'
  pod 'Alamofire'
+ pod 'PINRemoteImage'
 end

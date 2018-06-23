@@ -8,29 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		19B6617B20DD0EDB000D0F41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B6617A20DD0EDB000D0F41 /* AppDelegate.swift */; };
-		19B6617D20DD0EDB000D0F41 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B6617C20DD0EDB000D0F41 /* ViewController.swift */; };
 		19B6618020DD0EDB000D0F41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19B6617E20DD0EDB000D0F41 /* Main.storyboard */; };
 		19B6618220DD0EDF000D0F41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19B6618120DD0EDF000D0F41 /* Assets.xcassets */; };
 		19B6618520DD0EDF000D0F41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19B6618320DD0EDF000D0F41 /* LaunchScreen.storyboard */; };
-		19B6618D20DD10B8000D0F41 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B6618C20DD10B8000D0F41 /* TableViewController.swift */; };
-		19B6618F20DE136B000D0F41 /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B6618E20DE136B000D0F41 /* FeedTableViewController.swift */; };
+		19B6618F20DE136B000D0F41 /* ReposTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B6618E20DE136B000D0F41 /* ReposTableViewController.swift */; };
 		19F22BE420DE24E200A1E23C /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F22BE320DE24E200A1E23C /* Repo.swift */; };
 		19F22BE620DE250A00A1E23C /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F22BE520DE250A00A1E23C /* APIClient.swift */; };
+		19F22BEA20DE304C00A1E23C /* ReposViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F22BE920DE304C00A1E23C /* ReposViewModel.swift */; };
+		19F22BEE20DE365900A1E23C /* RepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F22BEC20DE365900A1E23C /* RepoTableViewCell.swift */; };
+		19F22BEF20DE365900A1E23C /* RepoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19F22BED20DE365900A1E23C /* RepoTableViewCell.xib */; };
 		ACF133D3E6D303FACA3199C1 /* Pods_Study_Himotoki_Realm_RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BCB7265521F733B2F1FA779 /* Pods_Study_Himotoki_Realm_RxSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		19B6617720DD0EDB000D0F41 /* Study-Himotoki-Realm-RxSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Study-Himotoki-Realm-RxSwift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		19B6617A20DD0EDB000D0F41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		19B6617C20DD0EDB000D0F41 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		19B6617F20DD0EDB000D0F41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		19B6618120DD0EDF000D0F41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		19B6618420DD0EDF000D0F41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		19B6618620DD0EDF000D0F41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		19B6618C20DD10B8000D0F41 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		19B6618E20DE136B000D0F41 /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
+		19B6618E20DE136B000D0F41 /* ReposTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposTableViewController.swift; sourceTree = "<group>"; };
 		19F22BE320DE24E200A1E23C /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
 		19F22BE520DE250A00A1E23C /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		19F22BE920DE304C00A1E23C /* ReposViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposViewModel.swift; sourceTree = "<group>"; };
+		19F22BEC20DE365900A1E23C /* RepoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTableViewCell.swift; sourceTree = "<group>"; };
+		19F22BED20DE365900A1E23C /* RepoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoTableViewCell.xib; sourceTree = "<group>"; };
 		4BCB7265521F733B2F1FA779 /* Pods_Study_Himotoki_Realm_RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Study_Himotoki_Realm_RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		838F99CCCB753AAF0A3DFDC2 /* Pods-Study-Himotoki-Realm-RxSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Study-Himotoki-Realm-RxSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Study-Himotoki-Realm-RxSwift/Pods-Study-Himotoki-Realm-RxSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		F37ED2118B4760F9A62CAE83 /* Pods-Study-Himotoki-Realm-RxSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Study-Himotoki-Realm-RxSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-Study-Himotoki-Realm-RxSwift/Pods-Study-Himotoki-Realm-RxSwift.release.xcconfig"; sourceTree = "<group>"; };
@@ -78,12 +80,11 @@
 		19B6617920DD0EDB000D0F41 /* Study-Himotoki-Realm-RxSwift */ = {
 			isa = PBXGroup;
 			children = (
+				19F22BEB20DE363E00A1E23C /* View */,
 				19F22BE220DE24D700A1E23C /* APIClient */,
 				19F22BE120DE24D100A1E23C /* Model */,
 				19B6617A20DD0EDB000D0F41 /* AppDelegate.swift */,
-				19B6617C20DD0EDB000D0F41 /* ViewController.swift */,
-				19B6618C20DD10B8000D0F41 /* TableViewController.swift */,
-				19B6618E20DE136B000D0F41 /* FeedTableViewController.swift */,
+				19B6618E20DE136B000D0F41 /* ReposTableViewController.swift */,
 				19B6617E20DD0EDB000D0F41 /* Main.storyboard */,
 				19B6618120DD0EDF000D0F41 /* Assets.xcassets */,
 				19B6618320DD0EDF000D0F41 /* LaunchScreen.storyboard */,
@@ -96,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				19F22BE320DE24E200A1E23C /* Repo.swift */,
+				19F22BE920DE304C00A1E23C /* ReposViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -106,6 +108,15 @@
 				19F22BE520DE250A00A1E23C /* APIClient.swift */,
 			);
 			path = APIClient;
+			sourceTree = "<group>";
+		};
+		19F22BEB20DE363E00A1E23C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				19F22BEC20DE365900A1E23C /* RepoTableViewCell.swift */,
+				19F22BED20DE365900A1E23C /* RepoTableViewCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		4617CEFF7A97470947CAD387 /* Frameworks */ = {
@@ -179,6 +190,7 @@
 				19B6618520DD0EDF000D0F41 /* LaunchScreen.storyboard in Resources */,
 				19B6618220DD0EDF000D0F41 /* Assets.xcassets in Resources */,
 				19B6618020DD0EDB000D0F41 /* Main.storyboard in Resources */,
+				19F22BEF20DE365900A1E23C /* RepoTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,7 +223,10 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Study-Himotoki-Realm-RxSwift/Pods-Study-Himotoki-Realm-RxSwift-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Himotoki/Himotoki.framework",
+				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
+				"${BUILT_PRODUCTS_DIR}/PINRemoteImage/PINRemoteImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
@@ -220,7 +235,10 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Himotoki.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINRemoteImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
@@ -238,12 +256,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19B6617D20DD0EDB000D0F41 /* ViewController.swift in Sources */,
-				19B6618D20DD10B8000D0F41 /* TableViewController.swift in Sources */,
 				19F22BE420DE24E200A1E23C /* Repo.swift in Sources */,
+				19F22BEA20DE304C00A1E23C /* ReposViewModel.swift in Sources */,
 				19B6617B20DD0EDB000D0F41 /* AppDelegate.swift in Sources */,
-				19B6618F20DE136B000D0F41 /* FeedTableViewController.swift in Sources */,
+				19B6618F20DE136B000D0F41 /* ReposTableViewController.swift in Sources */,
 				19F22BE620DE250A00A1E23C /* APIClient.swift in Sources */,
+				19F22BEE20DE365900A1E23C /* RepoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

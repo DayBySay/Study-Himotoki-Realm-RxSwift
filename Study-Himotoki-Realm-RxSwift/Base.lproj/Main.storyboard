@@ -12,7 +12,7 @@
         <!--Root View Controller-->
         <scene sceneID="G9d-7L-day">
             <objects>
-                <tableViewController id="Sqk-Q0-yoY" customClass="FeedTableViewController" customModule="Study_Himotoki_Realm_RxSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Sqk-Q0-yoY" customClass="ReposTableViewController" customModule="Study_Himotoki_Realm_RxSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0eQ-eC-1P7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,15 +27,11 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Sqk-Q0-yoY" id="Pr9-hL-ijn"/>
-                            <outlet property="delegate" destination="Sqk-Q0-yoY" id="EP2-7f-VGU"/>
-                        </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="59U-Dv-yP7">
                         <barButtonItem key="rightBarButtonItem" title="Item" id="a0h-Q5-uNc">
                             <connections>
-                                <action selector="add:" destination="Sqk-Q0-yoY" id="MRb-PM-n8H"/>
+                                <action selector="didTouchUpItemButton:" destination="Sqk-Q0-yoY" id="L4M-DZ-u5P"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

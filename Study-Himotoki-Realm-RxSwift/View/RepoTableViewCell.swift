@@ -8,6 +8,7 @@
 
 import UIKit
 import PINRemoteImage
+import SafariServices
 
 class RepoTableViewCell: UITableViewCell {
     let identifier = "RepoTableViewCell"
@@ -26,5 +27,10 @@ class RepoTableViewCell: UITableViewCell {
         self.repo = repo
         reponameLabel.text = repo.fullName
         ownerAvaterImageView.pin_setImage(from: repo.avatarUrl)
+    }
+    
+    func openRepository(target: UIViewController) {
+        let safariVC = SFSafariViewController(url: repo.url)
+        target.present(safariVC, animated: true, completion: nil)
     }
 }

@@ -19,21 +19,8 @@ class ReposTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        setupBinding()
-        
-        let refreshControl = UIRefreshControl()
-        refreshControl.rx.controlEvent(.valueChanged)
-            .subscribe({_ in 
-                self.refreshControl?.beginRefreshing()
-                self.reposViewModel.fetchData()
-            })
-        .disposed(by: disposeBag)
-        tableView.refreshControl = refreshControl
+        setupRefreshControl()
 
-        reposViewModel.fetchData()
-    }
-    
-    @IBAction func didTouchUpItemButton(_ sender: Any) {
         reposViewModel.fetchData()
     }
     
@@ -42,9 +29,13 @@ class ReposTableViewController: UITableViewController {
         tableView.dataSource = nil
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
         tableView.register(UINib(nibName: "RepoTableViewCell", bundle: nil), forCellReuseIdentifier: "RepoTableViewCell")
-    }
-    
-    func setupBinding() {
+        
+        tableView.rx.itemSelected
+            .subscribe(onNext: { [unowned self] indexPath in
+                let cell = self.tableView.cellForRow(at: indexPath) as? RepoTableViewCell
+                cell?.openRepository(target: self)
+            }).disposed(by: disposeBag)
+        
         reposViewModel
             .driver
             .asObservable()
@@ -53,10 +44,21 @@ class ReposTableViewController: UITableViewController {
                 c.setRepo(repo: element)
             }
             .disposed(by: disposeBag)
+    }
+    
+    func setupRefreshControl() {
+        let refreshControl = UIRefreshControl()
+        refreshControl.rx.controlEvent(.valueChanged)
+            .subscribe({_ in
+                self.refreshControl?.beginRefreshing()
+                self.reposViewModel.fetchData()
+            })
+            .disposed(by: disposeBag)
+        tableView.refreshControl = refreshControl
         
         reposViewModel.driver.drive(onNext: { (repos) in
             self.tableView.refreshControl?.endRefreshing()
         }, onCompleted: nil, onDisposed: nil)
-        .disposed(by: disposeBag)
+            .disposed(by: disposeBag)
     }
 }

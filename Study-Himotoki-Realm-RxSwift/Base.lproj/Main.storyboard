@@ -28,13 +28,7 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="59U-Dv-yP7">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="a0h-Q5-uNc">
-                            <connections>
-                                <action selector="didTouchUpItemButton:" destination="Sqk-Q0-yoY" id="L4M-DZ-u5P"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="59U-Dv-yP7"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q5I-fM-mhE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

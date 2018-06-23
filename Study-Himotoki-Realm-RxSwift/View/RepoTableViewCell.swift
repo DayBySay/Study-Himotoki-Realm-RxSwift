@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PINRemoteImage
 
 class RepoTableViewCell: UITableViewCell {
     let identifier = "RepoTableViewCell"
@@ -24,6 +25,6 @@ class RepoTableViewCell: UITableViewCell {
     func setRepo(repo: Repo) {
         self.repo = repo
         reponameLabel.text = repo.fullName
-//        ownerAvaterImageView.image =
+        ownerAvaterImageView.pin_setImage(from: repo.avatarUrl)
     }
 }

@@ -27,10 +27,6 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Sqk-Q0-yoY" id="Pr9-hL-ijn"/>
-                            <outlet property="delegate" destination="Sqk-Q0-yoY" id="EP2-7f-VGU"/>
-                        </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="59U-Dv-yP7">
                         <barButtonItem key="rightBarButtonItem" title="Item" id="a0h-Q5-uNc">

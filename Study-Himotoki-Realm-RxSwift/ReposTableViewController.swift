@@ -10,33 +10,37 @@ import UIKit
 import Alamofire
 import Himotoki
 import RxSwift
+import RxCocoa
 
 class ReposTableViewController: UITableViewController {
     let reposViewModel = ReposViewModel()
     let disposeBag = DisposeBag()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        reposViewModel.driver.drive(onNext: { (repos) in
-            for repo in repos {
-                print(repo.fullName)
-            }
-        }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        setupTableView()
+        setupBinding()
     }
     
     @IBAction func didTouchUpItemButton(_ sender: Any) {
         reposViewModel.fetchData()
     }
     
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    func setupTableView() {
+        tableView.delegate = nil
+        tableView.dataSource = nil
+        tableView.rx.setDelegate(self).disposed(by: disposeBag)
+        tableView.register(UINib(nibName: "RepoTableViewCell", bundle: nil), forCellReuseIdentifier: "RepoTableViewCell")
     }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+    
+    func setupBinding() {
+        reposViewModel
+            .driver
+            .asObservable()
+            .bind(to: self.tableView.rx.items(cellIdentifier: "RepoTableViewCell")) { (row, element, cell) in
+                let c = cell as! RepoTableViewCell
+                c.setRepo(repo: element)
+            }
+            .disposed(by: disposeBag)
     }
 }

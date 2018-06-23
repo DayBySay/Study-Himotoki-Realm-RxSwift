@@ -15,6 +15,8 @@
 		19F22BE420DE24E200A1E23C /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F22BE320DE24E200A1E23C /* Repo.swift */; };
 		19F22BE620DE250A00A1E23C /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F22BE520DE250A00A1E23C /* APIClient.swift */; };
 		19F22BEA20DE304C00A1E23C /* ReposViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F22BE920DE304C00A1E23C /* ReposViewModel.swift */; };
+		19F22BEE20DE365900A1E23C /* RepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F22BEC20DE365900A1E23C /* RepoTableViewCell.swift */; };
+		19F22BEF20DE365900A1E23C /* RepoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19F22BED20DE365900A1E23C /* RepoTableViewCell.xib */; };
 		ACF133D3E6D303FACA3199C1 /* Pods_Study_Himotoki_Realm_RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BCB7265521F733B2F1FA779 /* Pods_Study_Himotoki_Realm_RxSwift.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +31,8 @@
 		19F22BE320DE24E200A1E23C /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
 		19F22BE520DE250A00A1E23C /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		19F22BE920DE304C00A1E23C /* ReposViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposViewModel.swift; sourceTree = "<group>"; };
+		19F22BEC20DE365900A1E23C /* RepoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTableViewCell.swift; sourceTree = "<group>"; };
+		19F22BED20DE365900A1E23C /* RepoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoTableViewCell.xib; sourceTree = "<group>"; };
 		4BCB7265521F733B2F1FA779 /* Pods_Study_Himotoki_Realm_RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Study_Himotoki_Realm_RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		838F99CCCB753AAF0A3DFDC2 /* Pods-Study-Himotoki-Realm-RxSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Study-Himotoki-Realm-RxSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Study-Himotoki-Realm-RxSwift/Pods-Study-Himotoki-Realm-RxSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		F37ED2118B4760F9A62CAE83 /* Pods-Study-Himotoki-Realm-RxSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Study-Himotoki-Realm-RxSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-Study-Himotoki-Realm-RxSwift/Pods-Study-Himotoki-Realm-RxSwift.release.xcconfig"; sourceTree = "<group>"; };
@@ -76,6 +80,7 @@
 		19B6617920DD0EDB000D0F41 /* Study-Himotoki-Realm-RxSwift */ = {
 			isa = PBXGroup;
 			children = (
+				19F22BEB20DE363E00A1E23C /* View */,
 				19F22BE220DE24D700A1E23C /* APIClient */,
 				19F22BE120DE24D100A1E23C /* Model */,
 				19B6617A20DD0EDB000D0F41 /* AppDelegate.swift */,
@@ -103,6 +108,15 @@
 				19F22BE520DE250A00A1E23C /* APIClient.swift */,
 			);
 			path = APIClient;
+			sourceTree = "<group>";
+		};
+		19F22BEB20DE363E00A1E23C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				19F22BEC20DE365900A1E23C /* RepoTableViewCell.swift */,
+				19F22BED20DE365900A1E23C /* RepoTableViewCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		4617CEFF7A97470947CAD387 /* Frameworks */ = {
@@ -176,6 +190,7 @@
 				19B6618520DD0EDF000D0F41 /* LaunchScreen.storyboard in Resources */,
 				19B6618220DD0EDF000D0F41 /* Assets.xcassets in Resources */,
 				19B6618020DD0EDB000D0F41 /* Main.storyboard in Resources */,
+				19F22BEF20DE365900A1E23C /* RepoTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +255,7 @@
 				19B6617B20DD0EDB000D0F41 /* AppDelegate.swift in Sources */,
 				19B6618F20DE136B000D0F41 /* ReposTableViewController.swift in Sources */,
 				19F22BE620DE250A00A1E23C /* APIClient.swift in Sources */,
+				19F22BEE20DE365900A1E23C /* RepoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,7 +14,12 @@ import Alamofire
 class TableViewController: UITableViewController {
     @IBAction func add(_ sender: Any) {
         APIRequest.request { (users) in
-            
+            let realm = try! Realm()
+            try! realm.write {
+                for user in users.users {
+                    realm.add(user)
+                }
+            }
         }
     }
     
@@ -54,14 +59,20 @@ class TableViewController: UITableViewController {
 }
 
 final class User: Object, Himotoki.Decodable {
+    @objc dynamic var id = 0
     @objc dynamic var name = ""
     @objc dynamic var age = 0
     
     static func decode(_ e: Extractor) throws -> User {
         let user = User()
+        user.id = try! e <| "id"
         user.name = try! e <| "name"
         user.age = try! e <| "age"
         return user
+    }
+    
+    override static func primaryKey() -> String? {
+        return "id"
     }
 }
 

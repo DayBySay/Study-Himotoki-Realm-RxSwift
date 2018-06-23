@@ -1,0 +1,39 @@
+PODS:
+  - Alamofire (4.7.2)
+  - Himotoki (3.2.0)
+  - Realm (3.6.0):
+    - Realm/Headers (= 3.6.0)
+  - Realm/Headers (3.6.0)
+  - RealmSwift (3.6.0):
+    - Realm (= 3.6.0)
+  - RxCocoa (4.1.2):
+    - RxSwift (~> 4.0)
+  - RxSwift (4.1.2)
+
+DEPENDENCIES:
+  - Alamofire
+  - Himotoki
+  - RealmSwift
+  - RxCocoa
+  - RxSwift
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - Himotoki
+    - Realm
+    - RealmSwift
+    - RxCocoa
+    - RxSwift
+
+SPEC CHECKSUMS:
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  Himotoki: 2618fc6b939ad6d9b71c52c90fe210f54ea28167
+  Realm: 08b464b462d4f31bbd4ba5f5a1c8722ef0a700b7
+  RealmSwift: 973e1499c44ab571f894c2c908e2db450be280c3
+  RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
+  RxSwift: e49536837d9901277638493ea537394d4b55f570
+
+PODFILE CHECKSUM: 41eeb7b2f7a03583f686c8abaa644205d6265a98
+
+COCOAPODS: 1.5.3

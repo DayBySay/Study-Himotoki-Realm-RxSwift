@@ -9,33 +9,25 @@
 import UIKit
 import Alamofire
 import Himotoki
+import RxSwift
 
 class ReposTableViewController: UITableViewController {
-
+    let reposViewModel = ReposViewModel()
+    let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let request = URLAPIRequest()
-        let apiClient = AlamofireClient()
-        let url = URL(string: "https://api.github.com/users/daybysay/repos")!
-        
-        let loader = MyAPIRequestLoader(apiRequest: request, apiClient: apiClient)
-        loader.loadAPIRequest(requestData: url) { (repos, error) in
-            if let error = error {
-                print("error \(error)")
-                return
-            }
-            
-            guard let repos = repos else {
-                print("undefined error T_T")
-                return
-            }
-            
+        reposViewModel.driver.drive(onNext: { (repos) in
             for repo in repos {
                 print(repo.fullName)
             }
-        }
+        }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
-
+    
+    @IBAction func didTouchUpItemButton(_ sender: Any) {
+        reposViewModel.fetchData()
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

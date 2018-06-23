@@ -20,6 +20,17 @@ class ReposTableViewController: UITableViewController {
         super.viewDidLoad()
         setupTableView()
         setupBinding()
+        
+        let refreshControl = UIRefreshControl()
+        refreshControl.rx.controlEvent(.valueChanged)
+            .subscribe({_ in 
+                self.refreshControl?.beginRefreshing()
+                self.reposViewModel.fetchData()
+            })
+        .disposed(by: disposeBag)
+        tableView.refreshControl = refreshControl
+
+        reposViewModel.fetchData()
     }
     
     @IBAction func didTouchUpItemButton(_ sender: Any) {
@@ -42,5 +53,10 @@ class ReposTableViewController: UITableViewController {
                 c.setRepo(repo: element)
             }
             .disposed(by: disposeBag)
+        
+        reposViewModel.driver.drive(onNext: { (repos) in
+            self.tableView.refreshControl?.endRefreshing()
+        }, onCompleted: nil, onDisposed: nil)
+        .disposed(by: disposeBag)
     }
 }

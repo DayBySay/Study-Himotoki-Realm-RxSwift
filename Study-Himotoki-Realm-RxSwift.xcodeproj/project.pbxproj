@@ -8,12 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		19B6617B20DD0EDB000D0F41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B6617A20DD0EDB000D0F41 /* AppDelegate.swift */; };
-		19B6617D20DD0EDB000D0F41 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B6617C20DD0EDB000D0F41 /* ViewController.swift */; };
 		19B6618020DD0EDB000D0F41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19B6617E20DD0EDB000D0F41 /* Main.storyboard */; };
 		19B6618220DD0EDF000D0F41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19B6618120DD0EDF000D0F41 /* Assets.xcassets */; };
 		19B6618520DD0EDF000D0F41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19B6618320DD0EDF000D0F41 /* LaunchScreen.storyboard */; };
-		19B6618D20DD10B8000D0F41 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B6618C20DD10B8000D0F41 /* TableViewController.swift */; };
-		19B6618F20DE136B000D0F41 /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B6618E20DE136B000D0F41 /* FeedTableViewController.swift */; };
+		19B6618F20DE136B000D0F41 /* ReposTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B6618E20DE136B000D0F41 /* ReposTableViewController.swift */; };
 		19F22BE420DE24E200A1E23C /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F22BE320DE24E200A1E23C /* Repo.swift */; };
 		19F22BE620DE250A00A1E23C /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F22BE520DE250A00A1E23C /* APIClient.swift */; };
 		ACF133D3E6D303FACA3199C1 /* Pods_Study_Himotoki_Realm_RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BCB7265521F733B2F1FA779 /* Pods_Study_Himotoki_Realm_RxSwift.framework */; };
@@ -22,13 +20,11 @@
 /* Begin PBXFileReference section */
 		19B6617720DD0EDB000D0F41 /* Study-Himotoki-Realm-RxSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Study-Himotoki-Realm-RxSwift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		19B6617A20DD0EDB000D0F41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		19B6617C20DD0EDB000D0F41 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		19B6617F20DD0EDB000D0F41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		19B6618120DD0EDF000D0F41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		19B6618420DD0EDF000D0F41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		19B6618620DD0EDF000D0F41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		19B6618C20DD10B8000D0F41 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		19B6618E20DE136B000D0F41 /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
+		19B6618E20DE136B000D0F41 /* ReposTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposTableViewController.swift; sourceTree = "<group>"; };
 		19F22BE320DE24E200A1E23C /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
 		19F22BE520DE250A00A1E23C /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		4BCB7265521F733B2F1FA779 /* Pods_Study_Himotoki_Realm_RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Study_Himotoki_Realm_RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,9 +77,7 @@
 				19F22BE220DE24D700A1E23C /* APIClient */,
 				19F22BE120DE24D100A1E23C /* Model */,
 				19B6617A20DD0EDB000D0F41 /* AppDelegate.swift */,
-				19B6617C20DD0EDB000D0F41 /* ViewController.swift */,
-				19B6618C20DD10B8000D0F41 /* TableViewController.swift */,
-				19B6618E20DE136B000D0F41 /* FeedTableViewController.swift */,
+				19B6618E20DE136B000D0F41 /* ReposTableViewController.swift */,
 				19B6617E20DD0EDB000D0F41 /* Main.storyboard */,
 				19B6618120DD0EDF000D0F41 /* Assets.xcassets */,
 				19B6618320DD0EDF000D0F41 /* LaunchScreen.storyboard */,
@@ -238,11 +232,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19B6617D20DD0EDB000D0F41 /* ViewController.swift in Sources */,
-				19B6618D20DD10B8000D0F41 /* TableViewController.swift in Sources */,
 				19F22BE420DE24E200A1E23C /* Repo.swift in Sources */,
 				19B6617B20DD0EDB000D0F41 /* AppDelegate.swift in Sources */,
-				19B6618F20DE136B000D0F41 /* FeedTableViewController.swift in Sources */,
+				19B6618F20DE136B000D0F41 /* ReposTableViewController.swift in Sources */,
 				19F22BE620DE250A00A1E23C /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

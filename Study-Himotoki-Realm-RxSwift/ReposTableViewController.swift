@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import Himotoki
 
-class FeedTableViewController: UITableViewController {
+class ReposTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

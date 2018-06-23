@@ -19,16 +19,7 @@ class ReposTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        setupBinding()
-        
-        let refreshControl = UIRefreshControl()
-        refreshControl.rx.controlEvent(.valueChanged)
-            .subscribe({_ in 
-                self.refreshControl?.beginRefreshing()
-                self.reposViewModel.fetchData()
-            })
-        .disposed(by: disposeBag)
-        tableView.refreshControl = refreshControl
+        setupRefreshControl()
 
         reposViewModel.fetchData()
     }
@@ -43,10 +34,8 @@ class ReposTableViewController: UITableViewController {
             .subscribe(onNext: { [unowned self] indexPath in
                 let cell = self.tableView.cellForRow(at: indexPath) as? RepoTableViewCell
                 cell?.openRepository(target: self)
-            }).addDisposableTo(disposeBag)
-    }
-    
-    func setupBinding() {
+            }).disposed(by: disposeBag)
+        
         reposViewModel
             .driver
             .asObservable()
@@ -55,10 +44,21 @@ class ReposTableViewController: UITableViewController {
                 c.setRepo(repo: element)
             }
             .disposed(by: disposeBag)
+    }
+    
+    func setupRefreshControl() {
+        let refreshControl = UIRefreshControl()
+        refreshControl.rx.controlEvent(.valueChanged)
+            .subscribe({_ in
+                self.refreshControl?.beginRefreshing()
+                self.reposViewModel.fetchData()
+            })
+            .disposed(by: disposeBag)
+        tableView.refreshControl = refreshControl
         
         reposViewModel.driver.drive(onNext: { (repos) in
             self.tableView.refreshControl?.endRefreshing()
         }, onCompleted: nil, onDisposed: nil)
-        .disposed(by: disposeBag)
+            .disposed(by: disposeBag)
     }
 }

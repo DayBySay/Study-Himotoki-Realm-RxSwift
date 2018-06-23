@@ -8,15 +8,31 @@
 
 import UIKit
 import Alamofire
+import Himotoki
 
 class FeedTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let url = URL(string: "https://github.com/ReactiveX/RxSwift/releases.atom")!
-        let apiClient = APIClient(client: AlamofireClient())
-        apiClient.request(url: url) { (data) in
-            print("data dayo \(data)")
+        let request = URLAPIRequest()
+        let apiClient = AlamofireClient()
+        let url = URL(string: "https://api.github.com/users/daybysay/repos")!
+        
+        let loader = MyAPIRequestLoader(apiRequest: request, apiClient: apiClient)
+        loader.loadAPIRequest(requestData: url) { (repos, error) in
+            if let error = error {
+                print("error \(error)")
+                return
+            }
+            
+            guard let repos = repos else {
+                print("undefined error T_T")
+                return
+            }
+            
+            for repo in repos {
+                print(repo.fullName)
+            }
         }
     }
 
@@ -31,28 +47,4 @@ class FeedTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 0
     }
-}
-
-struct APIClient {
-    let client: APIClientProtocol
-    
-    init(client: APIClientProtocol) {
-        self.client = client
-    }
-    
-    func request(url: URL, completion: @escaping (_ responseJSON: Data) -> Void) {
-        client.request(url: url, completion: completion)
-    }
-}
-
-struct AlamofireClient: APIClientProtocol {
-    func request(url: URL, completion: @escaping (_ responseJSON: Data) -> Void) {
-        Alamofire.request(url).responseData { (response) in
-            completion(response.data!)
-        }
-    }
-}
-
-protocol APIClientProtocol {
-    func request(url: URL, completion: @escaping (_ responseJSON: Data) -> Void)
 }
